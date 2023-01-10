@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Purpose
 {
+
     public partial class CadastroDeClientes : Form
     {
+        public static System.Configuration.ConnectionStringSettingsCollection ConnectionStrings { get; }
+
         SqlConnection stringSQL;
         SqlCommand comandoSQL;
         SqlDataAdapter da;
@@ -46,7 +50,9 @@ namespace Purpose
         {
             try
             {
-                stringSQL = new SqlConnection("Server=localhost;Database=Purpose;User Id=sa;Password=sa123456;");
+                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+
+                stringSQL = new SqlConnection(connectionString);
                 scriptSQL = "SELECT * FROM TB_CLIENTES WHERE NOME = @NOME OR TELEFONE = @TELEFONE OR DATADENASCIMENTO = @DATADENASCIMENTO";
 
                 comandoSQL = new SqlCommand(scriptSQL, stringSQL);
@@ -81,7 +87,9 @@ namespace Purpose
         {
             try
             {
-                stringSQL = new SqlConnection("Server=localhost;Database=Purpose;User Id=sa;Password=sa123456;");
+                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+
+                stringSQL = new SqlConnection(connectionString);
                 scriptSQL = "SELECT * FROM TB_CLIENTES";
 
                 DataSet dataSet = new DataSet();
@@ -113,7 +121,9 @@ namespace Purpose
         {
             try
             {
-                stringSQL = new SqlConnection("Server=localhost;Database=Purpose;User Id=sa;Password=sa123456;");
+                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+
+                stringSQL = new SqlConnection(connectionString);
                 scriptSQL = "UPDATE TB_CLIENTES SET NOME = @NOME, TELEFONE = @TELEFONE, DATADENASCIMENTO = @DATADENASCIMENTO WHERE NOME = @NOME";
 
                 comandoSQL = new SqlCommand(scriptSQL, stringSQL);
@@ -149,7 +159,9 @@ namespace Purpose
         {
             try
             {
-                stringSQL = new SqlConnection("Server=localhost;Database=Purpose;User Id=sa;Password=sa123456;");
+                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+
+                stringSQL = new SqlConnection(connectionString);
                 scriptSQL = "DELETE TB_CLIENTES WHERE NOME = @NOME";
 
                 comandoSQL = new SqlCommand(scriptSQL, stringSQL);
