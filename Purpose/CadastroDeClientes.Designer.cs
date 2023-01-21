@@ -43,7 +43,15 @@ namespace Purpose
             this.btnExibir = new System.Windows.Forms.Button();
             this.lbFiltro = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.tcClientes = new System.Windows.Forms.TabControl();
+            this.tpClientes = new System.Windows.Forms.TabPage();
+            this.tpReferencias = new System.Windows.Forms.TabPage();
+            this.dgvReferenciaClientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.tcClientes.SuspendLayout();
+            this.tpClientes.SuspendLayout();
+            this.tpReferencias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReferenciaClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSair
@@ -62,6 +70,7 @@ namespace Purpose
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(169, 22);
             this.txtTelefone.TabIndex = 28;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // lbDataDeNascimento
             // 
@@ -160,25 +169,68 @@ namespace Purpose
             this.lbFiltro.AutoSize = true;
             this.lbFiltro.Location = new System.Drawing.Point(12, 225);
             this.lbFiltro.Name = "lbFiltro";
-            this.lbFiltro.Size = new System.Drawing.Size(36, 16);
+            this.lbFiltro.Size = new System.Drawing.Size(39, 16);
             this.lbFiltro.TabIndex = 35;
-            this.lbFiltro.Text = "Filtro";
+            this.lbFiltro.Text = "Filtro:";
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(12, 244);
+            this.dgvClientes.Location = new System.Drawing.Point(3, 3);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowTemplate.Height = 25;
-            this.dgvClientes.Size = new System.Drawing.Size(510, 150);
+            this.dgvClientes.Size = new System.Drawing.Size(496, 364);
             this.dgvClientes.TabIndex = 36;
+            // 
+            // tcClientes
+            // 
+            this.tcClientes.Controls.Add(this.tpClientes);
+            this.tcClientes.Controls.Add(this.tpReferencias);
+            this.tcClientes.Location = new System.Drawing.Point(12, 244);
+            this.tcClientes.Name = "tcClientes";
+            this.tcClientes.SelectedIndex = 0;
+            this.tcClientes.Size = new System.Drawing.Size(510, 399);
+            this.tcClientes.TabIndex = 37;
+            // 
+            // tpClientes
+            // 
+            this.tpClientes.BackColor = System.Drawing.Color.Black;
+            this.tpClientes.Controls.Add(this.dgvClientes);
+            this.tpClientes.Location = new System.Drawing.Point(4, 25);
+            this.tpClientes.Name = "tpClientes";
+            this.tpClientes.Padding = new System.Windows.Forms.Padding(3);
+            this.tpClientes.Size = new System.Drawing.Size(502, 370);
+            this.tpClientes.TabIndex = 0;
+            this.tpClientes.Text = "Clientes";
+            // 
+            // tpReferencias
+            // 
+            this.tpReferencias.BackColor = System.Drawing.Color.Black;
+            this.tpReferencias.Controls.Add(this.dgvReferenciaClientes);
+            this.tpReferencias.Location = new System.Drawing.Point(4, 25);
+            this.tpReferencias.Name = "tpReferencias";
+            this.tpReferencias.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReferencias.Size = new System.Drawing.Size(502, 370);
+            this.tpReferencias.TabIndex = 1;
+            this.tpReferencias.Text = "Referências";
+            // 
+            // dgvReferenciaClientes
+            // 
+            this.dgvReferenciaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReferenciaClientes.Location = new System.Drawing.Point(3, 26);
+            this.dgvReferenciaClientes.Name = "dgvReferenciaClientes";
+            this.dgvReferenciaClientes.RowTemplate.Height = 25;
+            this.dgvReferenciaClientes.Size = new System.Drawing.Size(496, 341);
+            this.dgvReferenciaClientes.TabIndex = 0;
             // 
             // CadastroDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 406);
-            this.Controls.Add(this.dgvClientes);
+            this.ClientSize = new System.Drawing.Size(535, 655);
+            this.Controls.Add(this.tcClientes);
             this.Controls.Add(this.lbFiltro);
             this.Controls.Add(this.btnExibir);
             this.Controls.Add(this.btnFiltrar);
@@ -197,6 +249,10 @@ namespace Purpose
             this.Text = "Cadastro de Clientes";
             this.Load += new System.EventHandler(this.CadastroDeClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.tcClientes.ResumeLayout(false);
+            this.tpClientes.ResumeLayout(false);
+            this.tpReferencias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReferenciaClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +274,10 @@ namespace Purpose
         private System.Windows.Forms.Button btnExibir;
         private System.Windows.Forms.Label lbFiltro;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.TabControl tcClientes;
+        private System.Windows.Forms.TabPage tpClientes;
+        private System.Windows.Forms.TabPage tpReferencias;
+        private System.Windows.Forms.DataGridView dgvReferenciaClientes;
     }
 }
 

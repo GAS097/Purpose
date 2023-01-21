@@ -26,24 +26,77 @@ namespace Purpose
         public CadastroDeClientes()
         {
             InitializeComponent();
-        }
+            //* Shown += OnShown;
+        }        
         private void CadastroDeClientes_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
 
-            //*Adicionando colunas ao data grid view
+            //* Adicionando colunas ao data grid view
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Nome", typeof(string));
             dt.Columns.Add("Telefone", typeof(int));
             dt.Columns.Add("Data de Nascimento", typeof(string));
 
+            dgvClientes.DataSource = dt;
+
+            //* Validação de tamanho máximo do campo Telefone
             txtTelefone.MaxLength = 11;
+
+            //* Validação de data máxima do campo Data de Nascimento (hoje)
+            dtpDataDeNascimento.MaxDate = DateTime.Today;
         }
 
+        //* Validação do campo telefone para aceitar apenas números
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.ApenasNumeros(e);
+        }
+
+        /* Carregar informações de referencias do cliente selecionado na DataGridView da aba Referencias
+        
+        private void OnShown(object sender, EventArgs e)
+        {
+            tcClientes.SelectedIndexChanged += tpReferenciaOnSelectedIndexChanged;
+            Selected();
+        }
+        private void tpReferenciaOnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Selected();
+        }
+        private void Selected()
+        {
+            DataGridView dgvReferencias = tcClientes.SelectedIndex switch
+            {
+                0 => tcClientes.TabPages[0].Controls.OfType<DataGridView>().FirstOrDefault(),
+                1 => tcClientes.TabPages[1].Controls.OfType<DataGridView>().FirstOrDefault(),
+                2 => tcClientes.TabPages[2].Controls.OfType<DataGridView>().FirstOrDefault(),
+                _ => null
+            };
+
+            if (dgvReferencias is null)
+            {
+                MessageBox.Show("Failed to find");
+            }
+            else
+            {
+                if (dgvReferencias.CurrentRow != null)
+                {
+                    var value = dgvReferencias.Rows[dgvReferencias.CurrentRow.Index].Cells[dgvReferencias.CurrentCell.ColumnIndex].Value.ToString();
+                }
+            }
+        }
+
+        */
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             IncluirCliente incluirCliente = new IncluirCliente();
             incluirCliente.Show();
+
+            //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a inclusão do cliente
+            txtNome.Text = "";
+            txtTelefone.Text = "";
+            dtpDataDeNascimento.Text = "";
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -143,6 +196,7 @@ namespace Purpose
             {
                 MessageBox.Show("Cliente alterado com sucesso!");
 
+                //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a alteração de um cliente
                 txtNome.Text = "";
                 txtTelefone.Text = "";
                 dtpDataDeNascimento.Text = "";
@@ -179,6 +233,7 @@ namespace Purpose
             {
                 MessageBox.Show("Cliente excluído com sucesso!");
 
+                //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a exclusão de um cliente
                 txtNome.Text = "";
                 txtTelefone.Text = "";
                 dtpDataDeNascimento.Text = "";
@@ -187,6 +242,6 @@ namespace Purpose
                 stringSQL = null;
                 comandoSQL = null;
             }
-        }
+        }        
     }
 }

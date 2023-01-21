@@ -23,3 +23,4 @@ C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.dll
 C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.pdb
 C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.genruntimeconfig.cache
 C:\Projetos\Purpose\Purpose\bin\Debug\netcoreapp3.1\Purpose.dll.config
+C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.csproj.AssemblyReference.cache

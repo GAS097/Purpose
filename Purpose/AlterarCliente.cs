@@ -14,7 +14,10 @@ namespace Purpose
         {
             InitializeComponent();
         }
-
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.ApenasNumeros(e);
+        }
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();

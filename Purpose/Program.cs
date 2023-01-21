@@ -19,5 +19,11 @@ namespace Purpose
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new CadastroDeClientes());
         }
-    }
+
+        public static void ApenasNumeros(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+    }    
 }

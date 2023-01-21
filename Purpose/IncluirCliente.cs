@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Purpose
 {
@@ -23,13 +24,16 @@ namespace Purpose
         private void IncluirCliente_Load(object sender, EventArgs e)
         {
             txtTelefone.MaxLength = 11;
-        }
+            dtpDataDeNascimento.MaxDate = DateTime.Today;
+        }       
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             try
             {
-                stringSQL = new SqlConnection("Server=localhost;Database=Purpose;User Id=sa;Password=sa123456;");
+                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+
+                stringSQL = new SqlConnection(connectionString);
                 scriptSQL = "INSERT INTO TB_CLIENTES (NOME, TELEFONE, DATADENASCIMENTO) VALUES (@NOME, @TELEFONE, @DATADENASCIMENTO)";
 
                 comandoSQL = new SqlCommand(scriptSQL, stringSQL);
@@ -39,7 +43,19 @@ namespace Purpose
                 comandoSQL.Parameters.AddWithValue("@DATADENASCIMENTO", dtpDataDeNascimento.Text);
 
                 stringSQL.Open();
-                comandoSQL.ExecuteNonQuery();
+
+                if (String.IsNullOrWhiteSpace(txtNome.Text))
+                {
+                    MessageBox.Show("O campo NOME está vazio, digite um nome.");
+                }
+                else if (String.IsNullOrWhiteSpace(txtTelefone.Text))
+                {
+                    MessageBox.Show("O campo TELEFONE está vazio, digite um telefone.");
+                }
+                else
+                {
+                    comandoSQL.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
@@ -60,6 +76,16 @@ namespace Purpose
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
+
+        private void dtpDataDeNascimento_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDataDeNascimento.MaxDate = DateTime.Today;
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {            
+                Program.ApenasNumeros(e);
+        }
     }
 }
