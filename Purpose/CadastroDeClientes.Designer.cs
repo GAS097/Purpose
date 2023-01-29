@@ -68,6 +68,7 @@ namespace Purpose
             // 
             this.txtTelefone.Location = new System.Drawing.Point(82, 70);
             this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.PlaceholderText = "Digite um número";
             this.txtTelefone.Size = new System.Drawing.Size(169, 22);
             this.txtTelefone.TabIndex = 28;
             this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
@@ -102,6 +103,7 @@ namespace Purpose
             // 
             this.txtNome.Location = new System.Drawing.Point(62, 27);
             this.txtNome.Name = "txtNome";
+            this.txtNome.PlaceholderText = "Digite um nome";
             this.txtNome.Size = new System.Drawing.Size(317, 22);
             this.txtNome.TabIndex = 24;
             // 
@@ -219,10 +221,10 @@ namespace Purpose
             // dgvReferenciaClientes
             // 
             this.dgvReferenciaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReferenciaClientes.Location = new System.Drawing.Point(3, 26);
+            this.dgvReferenciaClientes.Location = new System.Drawing.Point(3, 33);
             this.dgvReferenciaClientes.Name = "dgvReferenciaClientes";
             this.dgvReferenciaClientes.RowTemplate.Height = 25;
-            this.dgvReferenciaClientes.Size = new System.Drawing.Size(496, 341);
+            this.dgvReferenciaClientes.Size = new System.Drawing.Size(496, 334);
             this.dgvReferenciaClientes.TabIndex = 0;
             // 
             // CadastroDeClientes

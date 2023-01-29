@@ -53,8 +53,10 @@ namespace Purpose
             // 
             this.txtTelefone.Location = new System.Drawing.Point(82, 66);
             this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.PlaceholderText = "Digite um número";
             this.txtTelefone.Size = new System.Drawing.Size(148, 22);
             this.txtTelefone.TabIndex = 20;
+            this.txtTelefone.Click += new System.EventHandler(this.txtTelefone_Click);
             this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // lbDataDeNascimento
@@ -82,14 +84,15 @@ namespace Purpose
             this.dtpDataDeNascimento.Name = "dtpDataDeNascimento";
             this.dtpDataDeNascimento.Size = new System.Drawing.Size(103, 22);
             this.dtpDataDeNascimento.TabIndex = 17;
-            this.dtpDataDeNascimento.ValueChanged += new System.EventHandler(this.dtpDataDeNascimento_ValueChanged);
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(65, 23);
             this.txtNome.Name = "txtNome";
+            this.txtNome.PlaceholderText = "Digite um nome";
             this.txtNome.Size = new System.Drawing.Size(371, 22);
             this.txtNome.TabIndex = 16;
+            this.txtNome.Click += new System.EventHandler(this.txtNome_Click);
             // 
             // btnIncluir
             // 

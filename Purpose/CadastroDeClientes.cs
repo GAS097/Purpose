@@ -26,7 +26,6 @@ namespace Purpose
         public CadastroDeClientes()
         {
             InitializeComponent();
-            //* Shown += OnShown;
         }        
         private void CadastroDeClientes_Load(object sender, EventArgs e)
         {
@@ -52,48 +51,12 @@ namespace Purpose
         {
             Program.ApenasNumeros(e);
         }
-
-        /* Carregar informações de referencias do cliente selecionado na DataGridView da aba Referencias
-        
-        private void OnShown(object sender, EventArgs e)
-        {
-            tcClientes.SelectedIndexChanged += tpReferenciaOnSelectedIndexChanged;
-            Selected();
-        }
-        private void tpReferenciaOnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            Selected();
-        }
-        private void Selected()
-        {
-            DataGridView dgvReferencias = tcClientes.SelectedIndex switch
-            {
-                0 => tcClientes.TabPages[0].Controls.OfType<DataGridView>().FirstOrDefault(),
-                1 => tcClientes.TabPages[1].Controls.OfType<DataGridView>().FirstOrDefault(),
-                2 => tcClientes.TabPages[2].Controls.OfType<DataGridView>().FirstOrDefault(),
-                _ => null
-            };
-
-            if (dgvReferencias is null)
-            {
-                MessageBox.Show("Failed to find");
-            }
-            else
-            {
-                if (dgvReferencias.CurrentRow != null)
-                {
-                    var value = dgvReferencias.Rows[dgvReferencias.CurrentRow.Index].Cells[dgvReferencias.CurrentCell.ColumnIndex].Value.ToString();
-                }
-            }
-        }
-
-        */
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             IncluirCliente incluirCliente = new IncluirCliente();
             incluirCliente.Show();
 
-            //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a inclusão do cliente
+            //*Comandos para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a inclusão do cliente
             txtNome.Text = "";
             txtTelefone.Text = "";
             dtpDataDeNascimento.Text = "";
@@ -106,7 +69,7 @@ namespace Purpose
                 var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
 
                 stringSQL = new SqlConnection(connectionString);
-                scriptSQL = "SELECT * FROM TB_CLIENTES WHERE NOME = @NOME OR TELEFONE = @TELEFONE OR DATADENASCIMENTO = @DATADENASCIMENTO";
+                scriptSQL = "SELECT * FROM TB_CLIENTES WHERE CLIENTE_NOME = @NOME OR CLIENTE_TELEFONE = @TELEFONE OR CLIENTE_DATA_DE_NASCIMENTO = @DATADENASCIMENTO";
 
                 comandoSQL = new SqlCommand(scriptSQL, stringSQL);
 
@@ -119,9 +82,9 @@ namespace Purpose
 
                 while (dr.Read())
                 {
-                    txtNome.Text = (string)dr["NOME"];
-                    txtTelefone.Text = Convert.ToString(dr["TELEFONE"]);
-                    dtpDataDeNascimento.Text = Convert.ToString(dr["DATADENASCIMENTO"]);
+                    txtNome.Text = (string)dr["CLIENTE_NOME"];
+                    txtTelefone.Text = Convert.ToString(dr["CLIENTE_TELEFONE"]);
+                    dtpDataDeNascimento.Text = Convert.ToString(dr["CLIENTE_DATA_DE_NASCIMENTO"]);
                 }
             }
             catch (Exception ex)
@@ -172,38 +135,45 @@ namespace Purpose
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            try
+            if (String.IsNullOrWhiteSpace(txtNome.Text))
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
-
-                stringSQL = new SqlConnection(connectionString);
-                scriptSQL = "UPDATE TB_CLIENTES SET NOME = @NOME, TELEFONE = @TELEFONE, DATADENASCIMENTO = @DATADENASCIMENTO WHERE NOME = @NOME";
-
-                comandoSQL = new SqlCommand(scriptSQL, stringSQL);
-
-                comandoSQL.Parameters.AddWithValue("@NOME", txtNome.Text);
-                comandoSQL.Parameters.AddWithValue("@TELEFONE", txtTelefone.Text);
-                comandoSQL.Parameters.AddWithValue("@DATADENASCIMENTO", Convert.ToDateTime(dtpDataDeNascimento.Text));
-
-                stringSQL.Open();
-                comandoSQL.ExecuteNonQuery();                
+                MessageBox.Show("Filtre algum cliente para alterar as informações.");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                MessageBox.Show("Cliente alterado com sucesso!");
+                try
+                {
+                    var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
 
-                //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a alteração de um cliente
-                txtNome.Text = "";
-                txtTelefone.Text = "";
-                dtpDataDeNascimento.Text = "";
+                    stringSQL = new SqlConnection(connectionString);
+                    scriptSQL = "UPDATE TB_CLIENTES SET CLIENTE_NOME = @NOME, CLIENTE_TELEFONE = @TELEFONE, CLIENTE_DATA_DE_NASCIMENTO = @DATADENASCIMENTO WHERE CLIENTE_NOME = @NOME";
 
-                stringSQL.Close();
-                stringSQL = null;
-                comandoSQL = null;
+                    comandoSQL = new SqlCommand(scriptSQL, stringSQL);
+
+                    comandoSQL.Parameters.AddWithValue("@NOME", txtNome.Text);
+                    comandoSQL.Parameters.AddWithValue("@TELEFONE", txtTelefone.Text);
+                    comandoSQL.Parameters.AddWithValue("@DATADENASCIMENTO", Convert.ToDateTime(dtpDataDeNascimento.Text));
+
+                    stringSQL.Open();
+                    comandoSQL.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MessageBox.Show("Cliente alterado com sucesso!");
+
+                    //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a alteração de um cliente
+                    txtNome.Text = "";
+                    txtTelefone.Text = "";
+                    dtpDataDeNascimento.Text = "";
+
+                    stringSQL.Close();
+                    stringSQL = null;
+                    comandoSQL = null;
+                }
             }
             //AlterarCliente alterarCliente = new AlterarCliente();
             //alterarCliente.Show();
@@ -211,36 +181,43 @@ namespace Purpose
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            try
+            if (String.IsNullOrWhiteSpace(txtNome.Text))
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
-
-                stringSQL = new SqlConnection(connectionString);
-                scriptSQL = "DELETE TB_CLIENTES WHERE NOME = @NOME";
-
-                comandoSQL = new SqlCommand(scriptSQL, stringSQL);
-
-                comandoSQL.Parameters.AddWithValue("@NOME", txtNome.Text);
-
-                stringSQL.Open();
-                comandoSQL.ExecuteNonQuery();                
+                MessageBox.Show("Filtre algum cliente para excluir.");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                MessageBox.Show("Cliente excluído com sucesso!");
+                try
+                {
+                    var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
 
-                //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a exclusão de um cliente
-                txtNome.Text = "";
-                txtTelefone.Text = "";
-                dtpDataDeNascimento.Text = "";
+                    stringSQL = new SqlConnection(connectionString);
+                    scriptSQL = "DELETE TB_CLIENTES WHERE CLIENTE_NOME = @NOME";
 
-                stringSQL.Close();
-                stringSQL = null;
-                comandoSQL = null;
+                    comandoSQL = new SqlCommand(scriptSQL, stringSQL);
+
+                    comandoSQL.Parameters.AddWithValue("@NOME", txtNome.Text);
+
+                    stringSQL.Open();
+                    comandoSQL.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    MessageBox.Show("Cliente excluído com sucesso!");
+
+                    //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a exclusão de um cliente
+                    txtNome.Text = "";
+                    txtTelefone.Text = "";
+                    dtpDataDeNascimento.Text = "";
+
+                    stringSQL.Close();
+                    stringSQL = null;
+                    comandoSQL = null;
+                }
             }
         }        
     }
