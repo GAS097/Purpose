@@ -64,8 +64,6 @@ namespace Purpose
             }
             else
             {
-                txtNome.BackColor = Color.White;
-                txtTelefone.BackColor = Color.White;
                 try
                 {
                     var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;

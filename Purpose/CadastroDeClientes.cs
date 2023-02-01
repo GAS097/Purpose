@@ -26,18 +26,27 @@ namespace Purpose
         public CadastroDeClientes()
         {
             InitializeComponent();
-        }        
+        }
         private void CadastroDeClientes_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+            DataTable dtClientes = new DataTable();
+            DataTable dtReferencias = new DataTable();
 
-            //* Adicionando colunas ao data grid view
-            dt.Columns.Add("Id", typeof(int));
-            dt.Columns.Add("Nome", typeof(string));
-            dt.Columns.Add("Telefone", typeof(int));
-            dt.Columns.Add("Data de Nascimento", typeof(string));
+            //* Adicionando colunas ao data grid view Clientes
+            dtClientes.Columns.Add("ID", typeof(int));
+            dtClientes.Columns.Add("Nome", typeof(string));
+            dtClientes.Columns.Add("Telefone", typeof(int));
+            dtClientes.Columns.Add("Data de Nascimento", typeof(string));
 
-            dgvClientes.DataSource = dt;
+            dgvClientes.DataSource = dtClientes;
+
+            //* Adicionando colunas ao data grid view Referencias
+            dtReferencias.Columns.Add("ID Cliente", typeof(int));
+            dtReferencias.Columns.Add("ID Referencia", typeof(int));
+            dtReferencias.Columns.Add("Referencia", typeof(string));
+            dtReferencias.Columns.Add("Tipo de Referencia", typeof(int));
+
+            dgvReferenciaClientes.DataSource = dtReferencias;
 
             //* Validação de tamanho máximo do campo Telefone
             txtTelefone.MaxLength = 11;
@@ -46,6 +55,9 @@ namespace Purpose
             dtpDataDeNascimento.MaxDate = DateTime.Today;
         }
 
+        public static DataGridViewRow ClienteSelecionado { get; set; }
+
+
         //* Validação do campo telefone para aceitar apenas números
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -53,13 +65,15 @@ namespace Purpose
         }
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            IncluirCliente incluirCliente = new IncluirCliente();
-            incluirCliente.Show();
+            if (tpClientes.Focus())
+            {
+                IncluirCliente incluirCliente = new IncluirCliente();
+                incluirCliente.Show();
+            }
+            else if (tpReferencias.Focus())
+            {
 
-            //*Comandos para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a inclusão do cliente
-            txtNome.Text = "";
-            txtTelefone.Text = "";
-            dtpDataDeNascimento.Text = "";
+            }
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -109,7 +123,7 @@ namespace Purpose
                 scriptSQL = "SELECT * FROM TB_CLIENTES";
 
                 DataSet dataSet = new DataSet();
-                da = new SqlDataAdapter(scriptSQL,stringSQL);
+                da = new SqlDataAdapter(scriptSQL, stringSQL);
 
                 stringSQL.Open();
 
@@ -127,76 +141,50 @@ namespace Purpose
                 stringSQL = null;
             }
         }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtNome.Text))
+            DataGridViewRow linhaSelecionada = dgvClientes.CurrentRow;
+            AlterarCliente alterarCliente = new AlterarCliente();
+
+            if (linhaSelecionada == null)
             {
-                MessageBox.Show("Filtre algum cliente para alterar as informações.");
+                MessageBox.Show("Filtre e selecione um cliente para alterar.");
             }
             else
-            {
-                try
-                {
-                    var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+            {       
+                ClienteSelecionado = linhaSelecionada;
 
-                    stringSQL = new SqlConnection(connectionString);
-                    scriptSQL = "UPDATE TB_CLIENTES SET CLIENTE_NOME = @NOME, CLIENTE_TELEFONE = @TELEFONE, CLIENTE_DATA_DE_NASCIMENTO = @DATADENASCIMENTO WHERE CLIENTE_NOME = @NOME";
+                alterarCliente.txtID.Text = CadastroDeClientes.ClienteSelecionado.Cells[0].Value.ToString();
+                alterarCliente.txtNome.Text = CadastroDeClientes.ClienteSelecionado.Cells[1].Value.ToString();
+                alterarCliente.txtTelefone.Text = CadastroDeClientes.ClienteSelecionado.Cells[2].Value.ToString();
+                alterarCliente.dtpDataDeNascimento.Text = CadastroDeClientes.ClienteSelecionado.Cells[3].Value.ToString();
 
-                    comandoSQL = new SqlCommand(scriptSQL, stringSQL);
-
-                    comandoSQL.Parameters.AddWithValue("@NOME", txtNome.Text);
-                    comandoSQL.Parameters.AddWithValue("@TELEFONE", txtTelefone.Text);
-                    comandoSQL.Parameters.AddWithValue("@DATADENASCIMENTO", Convert.ToDateTime(dtpDataDeNascimento.Text));
-
-                    stringSQL.Open();
-                    comandoSQL.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    MessageBox.Show("Cliente alterado com sucesso!");
-
-                    //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a alteração de um cliente
-                    txtNome.Text = "";
-                    txtTelefone.Text = "";
-                    dtpDataDeNascimento.Text = "";
-
-                    stringSQL.Close();
-                    stringSQL = null;
-                    comandoSQL = null;
-                }
+                alterarCliente.Show();
             }
-            //AlterarCliente alterarCliente = new AlterarCliente();
-            //alterarCliente.Show();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtNome.Text))
+            DataGridViewRow linhaSelecionada = dgvClientes.CurrentRow;
+
+            if (linhaSelecionada == null)
             {
-                MessageBox.Show("Filtre algum cliente para excluir.");
+                MessageBox.Show("Filtre e selecione um cliente para excluir.");
             }
             else
             {
                 try
-                {
+                {                    
+                    ClienteSelecionado = linhaSelecionada;
+
                     var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
 
                     stringSQL = new SqlConnection(connectionString);
-                    scriptSQL = "DELETE TB_CLIENTES WHERE CLIENTE_NOME = @NOME";
+                    scriptSQL = "DELETE TB_CLIENTES WHERE CLIENTE_ID = @ID";
 
                     comandoSQL = new SqlCommand(scriptSQL, stringSQL);
 
-                    comandoSQL.Parameters.AddWithValue("@NOME", txtNome.Text);
+                    comandoSQL.Parameters.AddWithValue("@ID", ClienteSelecionado.Cells[0].Value.ToString());
 
                     stringSQL.Open();
                     comandoSQL.ExecuteNonQuery();
@@ -209,16 +197,15 @@ namespace Purpose
                 {
                     MessageBox.Show("Cliente excluído com sucesso!");
 
-                    //*Funções para limpar os campos Nome, Telefone e Data de Nascimento ao finalizar a exclusão de um cliente
-                    txtNome.Text = "";
-                    txtTelefone.Text = "";
-                    dtpDataDeNascimento.Text = "";
-
                     stringSQL.Close();
                     stringSQL = null;
                     comandoSQL = null;
                 }
             }
-        }        
+        }
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

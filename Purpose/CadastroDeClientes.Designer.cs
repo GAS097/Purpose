@@ -179,6 +179,7 @@ namespace Purpose
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AllowUserToResizeRows = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(3, 3);
             this.dgvClientes.Name = "dgvClientes";
@@ -220,11 +221,15 @@ namespace Purpose
             // 
             // dgvReferenciaClientes
             // 
+            this.dgvReferenciaClientes.AllowUserToAddRows = false;
+            this.dgvReferenciaClientes.AllowUserToDeleteRows = false;
+            this.dgvReferenciaClientes.AllowUserToOrderColumns = true;
+            this.dgvReferenciaClientes.AllowUserToResizeRows = false;
             this.dgvReferenciaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReferenciaClientes.Location = new System.Drawing.Point(3, 33);
+            this.dgvReferenciaClientes.Location = new System.Drawing.Point(3, 3);
             this.dgvReferenciaClientes.Name = "dgvReferenciaClientes";
             this.dgvReferenciaClientes.RowTemplate.Height = 25;
-            this.dgvReferenciaClientes.Size = new System.Drawing.Size(496, 334);
+            this.dgvReferenciaClientes.Size = new System.Drawing.Size(496, 364);
             this.dgvReferenciaClientes.TabIndex = 0;
             // 
             // CadastroDeClientes
