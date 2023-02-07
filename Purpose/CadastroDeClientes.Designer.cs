@@ -59,7 +59,7 @@ namespace Purpose
             this.btnSair.Location = new System.Drawing.Point(410, 116);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(112, 29);
-            this.btnSair.TabIndex = 29;
+            this.btnSair.TabIndex = 6;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -70,7 +70,7 @@ namespace Purpose
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PlaceholderText = "Digite um número";
             this.txtTelefone.Size = new System.Drawing.Size(169, 22);
-            this.txtTelefone.TabIndex = 28;
+            this.txtTelefone.TabIndex = 2;
             this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // lbDataDeNascimento
@@ -97,7 +97,7 @@ namespace Purpose
             this.dtpDataDeNascimento.Location = new System.Drawing.Point(150, 117);
             this.dtpDataDeNascimento.Name = "dtpDataDeNascimento";
             this.dtpDataDeNascimento.Size = new System.Drawing.Size(101, 22);
-            this.dtpDataDeNascimento.TabIndex = 25;
+            this.dtpDataDeNascimento.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -105,14 +105,14 @@ namespace Purpose
             this.txtNome.Name = "txtNome";
             this.txtNome.PlaceholderText = "Digite um nome";
             this.txtNome.Size = new System.Drawing.Size(317, 22);
-            this.txtNome.TabIndex = 24;
+            this.txtNome.TabIndex = 1;
             // 
             // btnIncluir
             // 
             this.btnIncluir.Location = new System.Drawing.Point(12, 175);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(112, 29);
-            this.btnIncluir.TabIndex = 23;
+            this.btnIncluir.TabIndex = 7;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
@@ -131,7 +131,7 @@ namespace Purpose
             this.btnAlterar.Location = new System.Drawing.Point(139, 175);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(112, 29);
-            this.btnAlterar.TabIndex = 31;
+            this.btnAlterar.TabIndex = 8;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -141,7 +141,7 @@ namespace Purpose
             this.btnExcluir.Location = new System.Drawing.Point(267, 175);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(112, 29);
-            this.btnExcluir.TabIndex = 32;
+            this.btnExcluir.TabIndex = 9;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -151,7 +151,7 @@ namespace Purpose
             this.btnFiltrar.Location = new System.Drawing.Point(410, 24);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(112, 29);
-            this.btnFiltrar.TabIndex = 33;
+            this.btnFiltrar.TabIndex = 4;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
@@ -161,7 +161,7 @@ namespace Purpose
             this.btnExibir.Location = new System.Drawing.Point(410, 70);
             this.btnExibir.Name = "btnExibir";
             this.btnExibir.Size = new System.Drawing.Size(112, 29);
-            this.btnExibir.TabIndex = 34;
+            this.btnExibir.TabIndex = 5;
             this.btnExibir.Text = "Exibir";
             this.btnExibir.UseVisualStyleBackColor = true;
             this.btnExibir.Click += new System.EventHandler(this.btnExibir_Click);
@@ -218,6 +218,7 @@ namespace Purpose
             this.tpReferencias.Size = new System.Drawing.Size(502, 370);
             this.tpReferencias.TabIndex = 1;
             this.tpReferencias.Text = "Referências";
+            this.tpReferencias.Enter += new System.EventHandler(this.tpReferencias_Enter);
             // 
             // dgvReferenciaClientes
             // 

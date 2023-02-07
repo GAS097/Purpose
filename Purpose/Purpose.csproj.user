@@ -7,6 +7,9 @@
     <Compile Update="CadastroDeClientes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="IncluirReferenciaDeCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="IncluirCliente.cs">
       <SubType>Form</SubType>
     </Compile>

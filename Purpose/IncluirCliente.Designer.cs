@@ -29,25 +29,25 @@ namespace Purpose
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSair = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lbDataDeNascimento = new System.Windows.Forms.Label();
             this.lbTelefone = new System.Windows.Forms.Label();
             this.dtpDataDeNascimento = new System.Windows.Forms.DateTimePicker();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.btnIncluir = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.lbNome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnSair
+            // btnCancelar
             // 
-            this.btnSair.Location = new System.Drawing.Point(359, 190);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(98, 27);
-            this.btnSair.TabIndex = 21;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(359, 190);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(98, 27);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtTelefone
             // 
@@ -55,7 +55,7 @@ namespace Purpose
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PlaceholderText = "Digite um número";
             this.txtTelefone.Size = new System.Drawing.Size(148, 22);
-            this.txtTelefone.TabIndex = 20;
+            this.txtTelefone.TabIndex = 2;
             this.txtTelefone.Click += new System.EventHandler(this.txtTelefone_Click);
             this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
@@ -83,7 +83,7 @@ namespace Purpose
             this.dtpDataDeNascimento.Location = new System.Drawing.Point(151, 107);
             this.dtpDataDeNascimento.Name = "dtpDataDeNascimento";
             this.dtpDataDeNascimento.Size = new System.Drawing.Size(103, 22);
-            this.dtpDataDeNascimento.TabIndex = 17;
+            this.dtpDataDeNascimento.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -91,18 +91,18 @@ namespace Purpose
             this.txtNome.Name = "txtNome";
             this.txtNome.PlaceholderText = "Digite um nome";
             this.txtNome.Size = new System.Drawing.Size(371, 22);
-            this.txtNome.TabIndex = 16;
+            this.txtNome.TabIndex = 1;
             this.txtNome.Click += new System.EventHandler(this.txtNome_Click);
             // 
-            // btnIncluir
+            // btnSalvar
             // 
-            this.btnIncluir.Location = new System.Drawing.Point(255, 190);
-            this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(98, 27);
-            this.btnIncluir.TabIndex = 15;
-            this.btnIncluir.Text = "Incluir";
-            this.btnIncluir.UseVisualStyleBackColor = true;
-            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
+            this.btnSalvar.Location = new System.Drawing.Point(255, 190);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(98, 27);
+            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // lbNome
             // 
@@ -118,17 +118,18 @@ namespace Purpose
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 229);
-            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lbDataDeNascimento);
             this.Controls.Add(this.lbTelefone);
             this.Controls.Add(this.dtpDataDeNascimento);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.btnIncluir);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lbNome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "IncluirCliente";
-            this.Text = "IncluirCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Incluir Cliente";
             this.Load += new System.EventHandler(this.IncluirCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,13 +138,13 @@ namespace Purpose
 
         #endregion
 
-        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lbDataDeNascimento;
         private System.Windows.Forms.Label lbTelefone;
         private System.Windows.Forms.DateTimePicker dtpDataDeNascimento;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lbNome;
     }
 }

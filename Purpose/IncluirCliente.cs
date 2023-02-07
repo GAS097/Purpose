@@ -43,7 +43,7 @@ namespace Purpose
 
         //*Operações da tela de inclusão de clientes
 
-        private void btnIncluir_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             string validacao = string.Empty;
 
@@ -94,11 +94,10 @@ namespace Purpose
 
                     this.Close();
                 }
-            }
-            
+            }            
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }        

@@ -35,7 +35,6 @@ namespace Purpose
             txtTelefone.MaxLength = 11;
             dtpDataDeNascimento.MaxDate = DateTime.Today;
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try

@@ -65,14 +65,31 @@ namespace Purpose
         }
         private void btnIncluir_Click(object sender, EventArgs e)
         {
+            //*O que irá acontecer ao clicar no botão Incluir com a aba de Clientes aberta
             if (tpClientes.Focus())
             {
                 IncluirCliente incluirCliente = new IncluirCliente();
                 incluirCliente.Show();
             }
+            //*O que irá acontecer ao clicar no botão Incluir com a aba de Referências aberta
             else if (tpReferencias.Focus())
             {
+                DataGridViewRow linhaSelecionada = dgvClientes.CurrentRow;
+                IncluirReferenciaDeCliente incluirReferencia = new IncluirReferenciaDeCliente();
 
+                if (linhaSelecionada == null)
+                {
+                    MessageBox.Show("Filtre e selecione um cliente para alterar.");
+                }
+                else
+                {
+                    ClienteSelecionado = linhaSelecionada;
+
+                    incluirReferencia.txtID.Text = CadastroDeClientes.ClienteSelecionado.Cells[0].Value.ToString();
+                    incluirReferencia.txtNome.Text = CadastroDeClientes.ClienteSelecionado.Cells[1].Value.ToString();
+
+                    incluirReferencia.Show();
+                }
             }
         }
 
@@ -206,6 +223,12 @@ namespace Purpose
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void tpReferencias_Enter(object sender, EventArgs e)
+        {
+                           
         }
     }
 }
