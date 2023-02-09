@@ -48,10 +48,8 @@ namespace Purpose
                     var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
 
                     stringSQL = new SqlConnection(connectionString);
-                    scriptSQL = "SET IDENTITY_INSERT TB_CLIENTES_REFERENCIAS ON " +
-                        "INSERT INTO TB_CLIENTES_REFERENCIAS (CLIENTE_ID, CLIENTE_TIPO_DE_REFERENCIA, CLIENTE_REFERENCIA) " +
-                        "VALUES (@ID, @TIPODEREFERENCIA, @REFERENCIA) " +
-                        "SET IDENTITY_INSERT TB_CLIENTES_REFERENCIAS OFF";
+                    scriptSQL = "INSERT INTO TB_CLIENTES_REFERENCIAS (CLIENTE_ID, CLIENTE_TIPO_DE_REFERENCIA, CLIENTE_REFERENCIA) " +
+                        "VALUES (@ID, @TIPODEREFERENCIA, @REFERENCIA) ";
 
                     comandoSQL = new SqlCommand(scriptSQL, stringSQL);
 

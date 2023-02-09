@@ -132,30 +132,64 @@ namespace Purpose
 
         private void btnExibir_Click(object sender, EventArgs e)
         {
-            try
+            if (tpClientes.Focus())
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+                try
+                {
+                    var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
 
-                stringSQL = new SqlConnection(connectionString);
-                scriptSQL = "SELECT * FROM TB_CLIENTES";
+                    stringSQL = new SqlConnection(connectionString);
+                    scriptSQL = "SELECT * FROM TB_CLIENTES";
 
-                DataSet dataSet = new DataSet();
-                da = new SqlDataAdapter(scriptSQL, stringSQL);
+                    DataSet dataSet = new DataSet();
+                    da = new SqlDataAdapter(scriptSQL, stringSQL);
 
-                stringSQL.Open();
+                    stringSQL.Open();
 
-                da.Fill(dataSet);
+                    da.Fill(dataSet);
 
-                dgvClientes.DataSource = dataSet.Tables[0];
+                    dgvClientes.DataSource = dataSet.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    stringSQL.Close();
+                    stringSQL = null;
+                }
             }
-            catch (Exception ex)
+            else if (tpReferencias.Focus())
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                stringSQL.Close();
-                stringSQL = null;
+                DataGridViewRow linhaSelecionada = dgvClientes.CurrentRow;
+                IncluirReferenciaDeCliente incluirReferencia = new IncluirReferenciaDeCliente();
+
+                try
+                {
+                    var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+
+                    stringSQL = new SqlConnection(connectionString);
+                    scriptSQL = "SELECT * FROM TB_CLIENTES_REFERENCIAS";
+
+                    DataSet dataSet = new DataSet();
+                    da = new SqlDataAdapter(scriptSQL, stringSQL);
+
+                    stringSQL.Open();
+
+                    da.Fill(dataSet);
+
+                    dgvReferenciaClientes.DataSource = dataSet.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    stringSQL.Close();
+                    stringSQL = null;
+                }
             }
         }
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -228,7 +262,31 @@ namespace Purpose
 
         private void tpReferencias_Enter(object sender, EventArgs e)
         {
-                           
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
+
+                stringSQL = new SqlConnection(connectionString);
+                scriptSQL = "SELECT * FROM TB_CLIENTES_REFERENCIAS";
+
+                DataSet dataSet = new DataSet();
+                da = new SqlDataAdapter(scriptSQL, stringSQL);
+
+                stringSQL.Open();
+
+                da.Fill(dataSet);
+
+                dgvReferenciaClientes.DataSource = dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                stringSQL.Close();
+                stringSQL = null;
+            }
         }
     }
 }
