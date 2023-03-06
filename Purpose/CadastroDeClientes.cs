@@ -56,6 +56,7 @@ namespace Purpose
         }
 
         public static DataGridViewRow ClienteSelecionado { get; set; }
+        public static DataGridViewRow ReferenciaSelecionada { get; set; }
 
 
         //* Validação do campo telefone para aceitar apenas números
@@ -194,24 +195,52 @@ namespace Purpose
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linhaSelecionada = dgvClientes.CurrentRow;
+            DataGridViewRow clienteSelecionado = dgvClientes.CurrentRow;
+            DataGridViewRow referenciaSelecionada = dgvReferenciaClientes.CurrentRow;
             AlterarCliente alterarCliente = new AlterarCliente();
+            AlterarReferenciaDoCliente alterarReferencia = new AlterarReferenciaDoCliente();
 
-            if (linhaSelecionada == null)
+            //*O que irá acontecer ao clicar no botão ALTERAR com a aba de Clientes aberta
+            if (tpClientes.Focus())
             {
-                MessageBox.Show("Filtre e selecione um cliente para alterar.");
-            }
-            else
-            {       
-                ClienteSelecionado = linhaSelecionada;
+                if (clienteSelecionado == null)
+                {
+                    MessageBox.Show("Filtre e selecione um cliente para alterar.");
+                }
+                else
+                {
+                    ClienteSelecionado = clienteSelecionado;
 
-                alterarCliente.txtID.Text = CadastroDeClientes.ClienteSelecionado.Cells[0].Value.ToString();
-                alterarCliente.txtNome.Text = CadastroDeClientes.ClienteSelecionado.Cells[1].Value.ToString();
-                alterarCliente.txtTelefone.Text = CadastroDeClientes.ClienteSelecionado.Cells[2].Value.ToString();
-                alterarCliente.dtpDataDeNascimento.Text = CadastroDeClientes.ClienteSelecionado.Cells[3].Value.ToString();
+                    alterarCliente.txtID.Text = CadastroDeClientes.ClienteSelecionado.Cells[0].Value.ToString();
+                    alterarCliente.txtNome.Text = CadastroDeClientes.ClienteSelecionado.Cells[1].Value.ToString();
+                    alterarCliente.txtTelefone.Text = CadastroDeClientes.ClienteSelecionado.Cells[2].Value.ToString();
+                    alterarCliente.dtpDataDeNascimento.Text = CadastroDeClientes.ClienteSelecionado.Cells[3].Value.ToString();
 
-                alterarCliente.Show();
+                    alterarCliente.Show();
+                }
             }
+            //*O que irá acontecer ao clicar no botão ALTERAR com a aba de Referências aberta
+            else if (tpReferencias.Focus())
+            {              
+
+                if (clienteSelecionado == null)
+                {
+                    MessageBox.Show("Filtre e selecione um cliente para ver e alterar as referencias.");
+                }
+                else
+                {
+                    ClienteSelecionado = clienteSelecionado;
+                    ReferenciaSelecionada = referenciaSelecionada;
+
+                    /*alterarReferencia.txtIDReferencia.Text = CadastroDeClientes.ReferenciaSelecionada.Cells[0].Value.ToString();
+                    alterarReferencia.txtReferencia.Text = CadastroDeClientes.ReferenciaSelecionada.Cells[1].Value.ToString();
+                    alterarReferencia.cbbTipoDeReferencia.Text = CadastroDeClientes.ReferenciaSelecionada.Cells[3].Value.ToString();
+                    alterarReferencia.txtIDCliente.Text = CadastroDeClientes.ClienteSelecionado.Cells[0].Value.ToString();
+                    alterarReferencia.txtNomeCliente.Text = CadastroDeClientes.ClienteSelecionado.Cells[1].Value.ToString();*/
+
+                    alterarReferencia.Show();
+                }
+            }            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

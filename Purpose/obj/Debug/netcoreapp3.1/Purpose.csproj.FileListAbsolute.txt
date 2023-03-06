@@ -25,3 +25,4 @@ C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.genruntimeconfig.cac
 C:\Projetos\Purpose\Purpose\bin\Debug\netcoreapp3.1\Purpose.dll.config
 C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.csproj.AssemblyReference.cache
 C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.IncluirReferenciaDeCliente.resources
+C:\Projetos\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.AlterarReferenciaDoCliente.resources

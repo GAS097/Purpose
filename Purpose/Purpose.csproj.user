@@ -4,6 +4,9 @@
     <Compile Update="AlterarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="AlterarReferenciaDoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CadastroDeClientes.cs">
       <SubType>Form</SubType>
     </Compile>
