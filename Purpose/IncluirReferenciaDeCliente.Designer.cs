@@ -151,7 +151,7 @@ namespace Purpose
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "IncluirReferenciaDeCliente";
             this.Text = "Incluir Referência de Cliente";
-            this.Load += new System.EventHandler(this.CadastroDeReferenciasDeClientes_Load);
+            this.Load += new System.EventHandler(this.IncluirReferenciaDeCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
