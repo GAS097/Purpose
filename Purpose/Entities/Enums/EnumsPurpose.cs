@@ -1,9 +1,11 @@
-﻿namespace Purpose.Entities.Enums
+﻿using Purpose;
+
+namespace Purpose.Entities.Enums
 {
     enum TipoDeReferencia : int
     {
-        Boa = 0,
-        Normal = 1,
-        Ruim = 2
+        Boa = 1,
+        Normal = 2,
+        Ruim = 3
     }
 }

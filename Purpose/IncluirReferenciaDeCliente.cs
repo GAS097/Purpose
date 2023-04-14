@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using Purpose.Entities.Enums;
+using EnumeratorDescription;
 
 namespace Purpose
 {
@@ -14,6 +16,12 @@ namespace Purpose
         public IncluirReferenciaDeCliente()
         {
             InitializeComponent();
+
+            cbbTipoDeReferencia.DataSource = Enum.GetValues(typeof(TipoDeReferencia));
+        }
+        private void cbbTipoDeReferencia_Format(object sender, ListControlConvertEventArgs e)
+        {
+            e.Value = (e.Value as Enum).GetDescription();
         }
         private void IncluirReferenciaDeCliente_Load(object sender, EventArgs e)
         {
@@ -34,7 +42,7 @@ namespace Purpose
             if (txtReferencia.TextLength < 20)
             {
                 MessageBox.Show(validacao = string.Format("Digite uma referência com pelo menos 20 caracteres.{0}", Environment.NewLine));
-            }            
+            }
             else
             {
                 try
@@ -48,7 +56,7 @@ namespace Purpose
                     comandoSQL = new SqlCommand(scriptSQL, stringSQL);
 
                     comandoSQL.Parameters.AddWithValue("ID", txtID.Text);
-                    comandoSQL.Parameters.AddWithValue("@TIPODEREFERENCIA", cbbTipoDeReferencia.Text);
+                    comandoSQL.Parameters.AddWithValue("@TIPODEREFERENCIA", (int)(TipoDeReferencia)cbbTipoDeReferencia.SelectedItem);
                     comandoSQL.Parameters.AddWithValue("@REFERENCIA", txtReferencia.Text);
 
                     stringSQL.Open();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using Purpose.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using EnumeratorDescription;
 
 namespace Purpose
 {
@@ -25,6 +27,13 @@ namespace Purpose
         public AlterarReferenciaDoCliente()
         {
             InitializeComponent();
+
+            cbbTipoDeReferencia.DataSource = Enum.GetValues(typeof(TipoDeReferencia));
+        }
+
+        private void cbbTipoDeReferencia_Format(object sender, ListControlConvertEventArgs e)
+        {
+            e.Value  = (e.Value as Enum).GetDescription();
         }
 
         private void AlterarReferenciaDoCliente_Load(object sender, EventArgs e)
@@ -56,7 +65,7 @@ namespace Purpose
                     comandoSQL = new SqlCommand(scriptSQL, stringSQL);
 
                     comandoSQL.Parameters.AddWithValue("@REFID", txtIDReferencia.Text);
-                    comandoSQL.Parameters.AddWithValue("@TIPODEREFERENCIA", cbbTipoDeReferencia.Text);
+                    comandoSQL.Parameters.AddWithValue("@TIPODEREFERENCIA", (int)(TipoDeReferencia)cbbTipoDeReferencia.SelectedItem);
                     comandoSQL.Parameters.AddWithValue("@REFERENCIA", txtReferencia.Text);
 
                     stringSQL.Open();
@@ -77,6 +86,10 @@ namespace Purpose
                     this.Close();
                 }
             }
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }        
     }
 }

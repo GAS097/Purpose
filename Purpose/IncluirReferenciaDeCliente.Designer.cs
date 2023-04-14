@@ -29,132 +29,131 @@ namespace Purpose
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtReferencia = new System.Windows.Forms.TextBox();
-            this.lbTipoDeReferencia = new System.Windows.Forms.Label();
-            this.lbReferencia = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.lbCliente = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
-            this.cbbTipoDeReferencia = new System.Windows.Forms.ComboBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            btnCancelar = new System.Windows.Forms.Button();
+            txtReferencia = new System.Windows.Forms.TextBox();
+            lbTipoDeReferencia = new System.Windows.Forms.Label();
+            lbReferencia = new System.Windows.Forms.Label();
+            txtNome = new System.Windows.Forms.TextBox();
+            btnSalvar = new System.Windows.Forms.Button();
+            lbCliente = new System.Windows.Forms.Label();
+            lbID = new System.Windows.Forms.Label();
+            cbbTipoDeReferencia = new System.Windows.Forms.ComboBox();
+            txtID = new System.Windows.Forms.TextBox();
+            SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(435, 202);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(112, 29);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.Location = new System.Drawing.Point(435, 202);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(112, 29);
+            btnCancelar.TabIndex = 4;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(114, 102);
-            this.txtReferencia.Multiline = true;
-            this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.PlaceholderText = "Escreva uma referência para este cliente:";
-            this.txtReferencia.Size = new System.Drawing.Size(433, 89);
-            this.txtReferencia.TabIndex = 2;
+            txtReferencia.Location = new System.Drawing.Point(114, 102);
+            txtReferencia.Multiline = true;
+            txtReferencia.Name = "txtReferencia";
+            txtReferencia.PlaceholderText = "Escreva uma referência para este cliente:";
+            txtReferencia.Size = new System.Drawing.Size(433, 89);
+            txtReferencia.TabIndex = 2;
             // 
             // lbTipoDeReferencia
             // 
-            this.lbTipoDeReferencia.AutoSize = true;
-            this.lbTipoDeReferencia.Location = new System.Drawing.Point(32, 70);
-            this.lbTipoDeReferencia.Name = "lbTipoDeReferencia";
-            this.lbTipoDeReferencia.Size = new System.Drawing.Size(126, 16);
-            this.lbTipoDeReferencia.TabIndex = 27;
-            this.lbTipoDeReferencia.Text = "Tipo de Referência:";
+            lbTipoDeReferencia.AutoSize = true;
+            lbTipoDeReferencia.Location = new System.Drawing.Point(32, 70);
+            lbTipoDeReferencia.Name = "lbTipoDeReferencia";
+            lbTipoDeReferencia.Size = new System.Drawing.Size(126, 16);
+            lbTipoDeReferencia.TabIndex = 27;
+            lbTipoDeReferencia.Text = "Tipo de Referência:";
             // 
             // lbReferencia
             // 
-            this.lbReferencia.AutoSize = true;
-            this.lbReferencia.Location = new System.Drawing.Point(32, 102);
-            this.lbReferencia.Name = "lbReferencia";
-            this.lbReferencia.Size = new System.Drawing.Size(76, 16);
-            this.lbReferencia.TabIndex = 26;
-            this.lbReferencia.Text = "Referência:";
+            lbReferencia.AutoSize = true;
+            lbReferencia.Location = new System.Drawing.Point(32, 102);
+            lbReferencia.Name = "lbReferencia";
+            lbReferencia.Size = new System.Drawing.Size(76, 16);
+            lbReferencia.TabIndex = 26;
+            lbReferencia.Text = "Referência:";
             // 
             // txtNome
             // 
-            this.txtNome.Enabled = false;
-            this.txtNome.Location = new System.Drawing.Point(85, 35);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(272, 22);
-            this.txtNome.TabIndex = 24;
+            txtNome.Enabled = false;
+            txtNome.Location = new System.Drawing.Point(85, 35);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new System.Drawing.Size(272, 22);
+            txtNome.TabIndex = 24;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(317, 202);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(112, 29);
-            this.btnSalvar.TabIndex = 3;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            btnSalvar.Location = new System.Drawing.Point(317, 202);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new System.Drawing.Size(112, 29);
+            btnSalvar.TabIndex = 3;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // lbCliente
             // 
-            this.lbCliente.AutoSize = true;
-            this.lbCliente.Location = new System.Drawing.Point(32, 38);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(51, 16);
-            this.lbCliente.TabIndex = 22;
-            this.lbCliente.Text = "Cliente:";
+            lbCliente.AutoSize = true;
+            lbCliente.Location = new System.Drawing.Point(32, 38);
+            lbCliente.Name = "lbCliente";
+            lbCliente.Size = new System.Drawing.Size(51, 16);
+            lbCliente.TabIndex = 22;
+            lbCliente.Text = "Cliente:";
             // 
             // lbID
             // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(32, 9);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(23, 16);
-            this.lbID.TabIndex = 30;
-            this.lbID.Text = "ID:";
+            lbID.AutoSize = true;
+            lbID.Location = new System.Drawing.Point(32, 9);
+            lbID.Name = "lbID";
+            lbID.Size = new System.Drawing.Size(23, 16);
+            lbID.TabIndex = 30;
+            lbID.Text = "ID:";
             // 
             // cbbTipoDeReferencia
             // 
-            this.cbbTipoDeReferencia.FormattingEnabled = true;
-            this.cbbTipoDeReferencia.Items.AddRange(new object[] {
-            "Boa",
-            "Ruim"});
-            this.cbbTipoDeReferencia.Location = new System.Drawing.Point(164, 67);
-            this.cbbTipoDeReferencia.Name = "cbbTipoDeReferencia";
-            this.cbbTipoDeReferencia.Size = new System.Drawing.Size(121, 24);
-            this.cbbTipoDeReferencia.TabIndex = 1;
+            cbbTipoDeReferencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbbTipoDeReferencia.FormattingEnabled = true;
+            cbbTipoDeReferencia.Items.AddRange(new object[] { "Boa", "Ruim" });
+            cbbTipoDeReferencia.Location = new System.Drawing.Point(164, 67);
+            cbbTipoDeReferencia.Name = "cbbTipoDeReferencia";
+            cbbTipoDeReferencia.Size = new System.Drawing.Size(121, 24);
+            cbbTipoDeReferencia.TabIndex = 1;
+            cbbTipoDeReferencia.Format += cbbTipoDeReferencia_Format;
             // 
             // txtID
             // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(85, 6);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(73, 22);
-            this.txtID.TabIndex = 32;
+            txtID.Enabled = false;
+            txtID.Location = new System.Drawing.Point(85, 6);
+            txtID.Name = "txtID";
+            txtID.Size = new System.Drawing.Size(73, 22);
+            txtID.TabIndex = 32;
             // 
             // IncluirReferenciaDeCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 243);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.cbbTipoDeReferencia);
-            this.Controls.Add(this.lbID);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtReferencia);
-            this.Controls.Add(this.lbTipoDeReferencia);
-            this.Controls.Add(this.lbReferencia);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.lbCliente);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "IncluirReferenciaDeCliente";
-            this.Text = "Incluir Referência de Cliente";
-            this.Load += new System.EventHandler(this.IncluirReferenciaDeCliente_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(559, 243);
+            Controls.Add(txtID);
+            Controls.Add(cbbTipoDeReferencia);
+            Controls.Add(lbID);
+            Controls.Add(btnCancelar);
+            Controls.Add(txtReferencia);
+            Controls.Add(lbTipoDeReferencia);
+            Controls.Add(lbReferencia);
+            Controls.Add(txtNome);
+            Controls.Add(btnSalvar);
+            Controls.Add(lbCliente);
+            Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Name = "IncluirReferenciaDeCliente";
+            Text = "Incluir Referência de Cliente";
+            Load += IncluirReferenciaDeCliente_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

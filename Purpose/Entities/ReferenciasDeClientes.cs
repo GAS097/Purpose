@@ -6,6 +6,6 @@ namespace Purpose.Entities
     class ReferenciasDeClientes
     {
         public string Referencia { get; set; }
-        public TipoDeReferencia TipoDeReferencia { get; set; }
+        public TipoDeReferencia TiposDeReferencias { get; set; }
     }
 }

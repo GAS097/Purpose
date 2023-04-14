@@ -28,166 +28,165 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtIDCliente = new System.Windows.Forms.TextBox();
-            this.cbbTipoDeReferencia = new System.Windows.Forms.ComboBox();
-            this.lbID = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtReferencia = new System.Windows.Forms.TextBox();
-            this.lbTipoDeReferencia = new System.Windows.Forms.Label();
-            this.lbReferencia = new System.Windows.Forms.Label();
-            this.txtNomeCliente = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.lbCliente = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIDReferencia = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            txtIDCliente = new System.Windows.Forms.TextBox();
+            cbbTipoDeReferencia = new System.Windows.Forms.ComboBox();
+            lbID = new System.Windows.Forms.Label();
+            btnCancelar = new System.Windows.Forms.Button();
+            txtReferencia = new System.Windows.Forms.TextBox();
+            lbTipoDeReferencia = new System.Windows.Forms.Label();
+            lbReferencia = new System.Windows.Forms.Label();
+            txtNomeCliente = new System.Windows.Forms.TextBox();
+            btnSalvar = new System.Windows.Forms.Button();
+            lbCliente = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            txtIDReferencia = new System.Windows.Forms.TextBox();
+            SuspendLayout();
             // 
             // txtIDCliente
             // 
-            this.txtIDCliente.Enabled = false;
-            this.txtIDCliente.Location = new System.Drawing.Point(103, 15);
-            this.txtIDCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIDCliente.Name = "txtIDCliente";
-            this.txtIDCliente.Size = new System.Drawing.Size(83, 22);
-            this.txtIDCliente.TabIndex = 42;
+            txtIDCliente.Enabled = false;
+            txtIDCliente.Location = new System.Drawing.Point(103, 15);
+            txtIDCliente.Margin = new System.Windows.Forms.Padding(4);
+            txtIDCliente.Name = "txtIDCliente";
+            txtIDCliente.Size = new System.Drawing.Size(83, 22);
+            txtIDCliente.TabIndex = 42;
             // 
             // cbbTipoDeReferencia
             // 
-            this.cbbTipoDeReferencia.FormattingEnabled = true;
-            this.cbbTipoDeReferencia.Items.AddRange(new object[] {
-            "Boa",
-            "Ruim"});
-            this.cbbTipoDeReferencia.Location = new System.Drawing.Point(162, 93);
-            this.cbbTipoDeReferencia.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbTipoDeReferencia.Name = "cbbTipoDeReferencia";
-            this.cbbTipoDeReferencia.Size = new System.Drawing.Size(137, 24);
-            this.cbbTipoDeReferencia.TabIndex = 33;
+            cbbTipoDeReferencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbbTipoDeReferencia.FormattingEnabled = true;
+            cbbTipoDeReferencia.Location = new System.Drawing.Point(162, 93);
+            cbbTipoDeReferencia.Margin = new System.Windows.Forms.Padding(4);
+            cbbTipoDeReferencia.Name = "cbbTipoDeReferencia";
+            cbbTipoDeReferencia.Size = new System.Drawing.Size(137, 24);
+            cbbTipoDeReferencia.TabIndex = 33;
+            cbbTipoDeReferencia.Format += cbbTipoDeReferencia_Format;
             // 
             // lbID
             // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(28, 18);
-            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(67, 16);
-            this.lbID.TabIndex = 41;
-            this.lbID.Text = "ID Cliente:";
+            lbID.AutoSize = true;
+            lbID.Location = new System.Drawing.Point(28, 18);
+            lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbID.Name = "lbID";
+            lbID.Size = new System.Drawing.Size(67, 16);
+            lbID.TabIndex = 41;
+            lbID.Text = "ID Cliente:";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(490, 254);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(128, 31);
-            this.btnCancelar.TabIndex = 36;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new System.Drawing.Point(490, 254);
+            btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(128, 31);
+            btnCancelar.TabIndex = 36;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(127, 139);
-            this.txtReferencia.Margin = new System.Windows.Forms.Padding(4);
-            this.txtReferencia.Multiline = true;
-            this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.PlaceholderText = "Escreva uma referência para este cliente:";
-            this.txtReferencia.Size = new System.Drawing.Size(495, 95);
-            this.txtReferencia.TabIndex = 34;
-            this.txtReferencia.TextChanged += new System.EventHandler(this.txtReferencia_TextChanged);
+            txtReferencia.Location = new System.Drawing.Point(103, 136);
+            txtReferencia.Margin = new System.Windows.Forms.Padding(4);
+            txtReferencia.Multiline = true;
+            txtReferencia.Name = "txtReferencia";
+            txtReferencia.PlaceholderText = "Escreva uma referência para este cliente:";
+            txtReferencia.Size = new System.Drawing.Size(515, 95);
+            txtReferencia.TabIndex = 34;
+            txtReferencia.TextChanged += txtReferencia_TextChanged;
             // 
             // lbTipoDeReferencia
             // 
-            this.lbTipoDeReferencia.AutoSize = true;
-            this.lbTipoDeReferencia.Location = new System.Drawing.Point(28, 96);
-            this.lbTipoDeReferencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTipoDeReferencia.Name = "lbTipoDeReferencia";
-            this.lbTipoDeReferencia.Size = new System.Drawing.Size(126, 16);
-            this.lbTipoDeReferencia.TabIndex = 40;
-            this.lbTipoDeReferencia.Text = "Tipo de Referência:";
+            lbTipoDeReferencia.AutoSize = true;
+            lbTipoDeReferencia.Location = new System.Drawing.Point(28, 96);
+            lbTipoDeReferencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbTipoDeReferencia.Name = "lbTipoDeReferencia";
+            lbTipoDeReferencia.Size = new System.Drawing.Size(126, 16);
+            lbTipoDeReferencia.TabIndex = 40;
+            lbTipoDeReferencia.Text = "Tipo de Referência:";
             // 
             // lbReferencia
             // 
-            this.lbReferencia.AutoSize = true;
-            this.lbReferencia.Location = new System.Drawing.Point(28, 139);
-            this.lbReferencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbReferencia.Name = "lbReferencia";
-            this.lbReferencia.Size = new System.Drawing.Size(76, 16);
-            this.lbReferencia.TabIndex = 39;
-            this.lbReferencia.Text = "Referência:";
+            lbReferencia.AutoSize = true;
+            lbReferencia.Location = new System.Drawing.Point(28, 139);
+            lbReferencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbReferencia.Name = "lbReferencia";
+            lbReferencia.Size = new System.Drawing.Size(76, 16);
+            lbReferencia.TabIndex = 39;
+            lbReferencia.Text = "Referência:";
             // 
             // txtNomeCliente
             // 
-            this.txtNomeCliente.Enabled = false;
-            this.txtNomeCliente.Location = new System.Drawing.Point(87, 54);
-            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(311, 22);
-            this.txtNomeCliente.TabIndex = 38;
+            txtNomeCliente.Enabled = false;
+            txtNomeCliente.Location = new System.Drawing.Point(103, 51);
+            txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
+            txtNomeCliente.Name = "txtNomeCliente";
+            txtNomeCliente.Size = new System.Drawing.Size(311, 22);
+            txtNomeCliente.TabIndex = 38;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(354, 254);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(128, 31);
-            this.btnSalvar.TabIndex = 35;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            btnSalvar.Location = new System.Drawing.Point(354, 254);
+            btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new System.Drawing.Size(128, 31);
+            btnSalvar.TabIndex = 35;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // lbCliente
             // 
-            this.lbCliente.AutoSize = true;
-            this.lbCliente.Location = new System.Drawing.Point(28, 57);
-            this.lbCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(51, 16);
-            this.lbCliente.TabIndex = 37;
-            this.lbCliente.Text = "Cliente:";
+            lbCliente.AutoSize = true;
+            lbCliente.Location = new System.Drawing.Point(28, 57);
+            lbCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbCliente.Name = "lbCliente";
+            lbCliente.Size = new System.Drawing.Size(51, 16);
+            lbCliente.TabIndex = 37;
+            lbCliente.Text = "Cliente:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 16);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "ID Referência:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(196, 18);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(92, 16);
+            label1.TabIndex = 43;
+            label1.Text = "ID Referência:";
             // 
             // txtIDReferencia
             // 
-            this.txtIDReferencia.Enabled = false;
-            this.txtIDReferencia.Location = new System.Drawing.Point(296, 15);
-            this.txtIDReferencia.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIDReferencia.Name = "txtIDReferencia";
-            this.txtIDReferencia.Size = new System.Drawing.Size(83, 22);
-            this.txtIDReferencia.TabIndex = 44;
+            txtIDReferencia.Enabled = false;
+            txtIDReferencia.Location = new System.Drawing.Point(296, 15);
+            txtIDReferencia.Margin = new System.Windows.Forms.Padding(4);
+            txtIDReferencia.Name = "txtIDReferencia";
+            txtIDReferencia.Size = new System.Drawing.Size(83, 22);
+            txtIDReferencia.TabIndex = 44;
             // 
             // AlterarReferenciaDoCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 298);
-            this.Controls.Add(this.txtIDReferencia);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtIDCliente);
-            this.Controls.Add(this.cbbTipoDeReferencia);
-            this.Controls.Add(this.lbID);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtReferencia);
-            this.Controls.Add(this.lbTipoDeReferencia);
-            this.Controls.Add(this.lbReferencia);
-            this.Controls.Add(this.txtNomeCliente);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.lbCliente);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AlterarReferenciaDoCliente";
-            this.Text = "AlterarReferenciaDoCliente";
-            this.Load += new System.EventHandler(this.AlterarReferenciaDoCliente_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(635, 298);
+            Controls.Add(txtIDReferencia);
+            Controls.Add(label1);
+            Controls.Add(txtIDCliente);
+            Controls.Add(cbbTipoDeReferencia);
+            Controls.Add(lbID);
+            Controls.Add(btnCancelar);
+            Controls.Add(txtReferencia);
+            Controls.Add(lbTipoDeReferencia);
+            Controls.Add(lbReferencia);
+            Controls.Add(txtNomeCliente);
+            Controls.Add(btnSalvar);
+            Controls.Add(lbCliente);
+            Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Margin = new System.Windows.Forms.Padding(4);
+            Name = "AlterarReferenciaDoCliente";
+            Text = "AlterarReferenciaDoCliente";
+            Load += AlterarReferenciaDoCliente_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

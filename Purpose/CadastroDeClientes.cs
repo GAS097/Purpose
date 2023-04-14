@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using Purpose.Entities.Enums;
+using EnumeratorDescription;
 
 namespace Purpose
 {
-
     public partial class CadastroDeClientes : Form
     {
+
         public static System.Configuration.ConnectionStringSettingsCollection ConnectionStrings { get; }
 
         SqlConnection stringSQL;
@@ -221,7 +223,7 @@ namespace Purpose
             }
             //*O que irá acontecer ao clicar no botão ALTERAR com a aba de Referências aberta
             else if (tpReferencias.Focus())
-            {              
+            {
 
                 if (clienteSelecionado == null)
                 {
@@ -232,15 +234,15 @@ namespace Purpose
                     ClienteSelecionado = clienteSelecionado;
                     ReferenciaSelecionada = referenciaSelecionada;
 
-                    /*alterarReferencia.txtIDReferencia.Text = CadastroDeClientes.ReferenciaSelecionada.Cells[0].Value.ToString();
+                    /*alterarReferencia.txtIDReferencia.Text = ReferenciaSelecionada.Cells[0].Value.ToString();
                     alterarReferencia.txtReferencia.Text = CadastroDeClientes.ReferenciaSelecionada.Cells[1].Value.ToString();
-                    alterarReferencia.cbbTipoDeReferencia.Text = CadastroDeClientes.ReferenciaSelecionada.Cells[3].Value.ToString();
+                    alterarReferencia.cbbTipoDeReferencia.Text = CadastroDeClientes.ReferenciaSelecionada.Cells[3].Value.ToString();*/
                     alterarReferencia.txtIDCliente.Text = CadastroDeClientes.ClienteSelecionado.Cells[0].Value.ToString();
-                    alterarReferencia.txtNomeCliente.Text = CadastroDeClientes.ClienteSelecionado.Cells[1].Value.ToString();*/
+                    alterarReferencia.txtNomeCliente.Text = CadastroDeClientes.ClienteSelecionado.Cells[1].Value.ToString();
 
                     alterarReferencia.Show();
                 }
-            }            
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -254,7 +256,7 @@ namespace Purpose
             else
             {
                 try
-                {                    
+                {
                     ClienteSelecionado = linhaSelecionada;
 
                     var connectionString = ConfigurationManager.ConnectionStrings["Purpose"].ConnectionString;
