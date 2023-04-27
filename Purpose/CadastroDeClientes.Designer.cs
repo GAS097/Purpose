@@ -47,26 +47,38 @@ namespace Purpose
             tpClientes = new System.Windows.Forms.TabPage();
             tpReferencias = new System.Windows.Forms.TabPage();
             dgvReferenciaClientes = new System.Windows.Forms.DataGridView();
+            pnTitulo = new System.Windows.Forms.Panel();
+            btnMinimizar = new System.Windows.Forms.Button();
+            btnMaximizar = new System.Windows.Forms.Button();
+            btnFechar = new System.Windows.Forms.Button();
+            lbTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             tcClientes.SuspendLayout();
             tpClientes.SuspendLayout();
             tpReferencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReferenciaClientes).BeginInit();
+            pnTitulo.SuspendLayout();
             SuspendLayout();
             // 
             // btnSair
             // 
-            btnSair.Location = new System.Drawing.Point(410, 116);
+            btnSair.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnSair.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnSair.Image = Properties.Resources.icons8_emergency_exit_25;
+            btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSair.Location = new System.Drawing.Point(410, 150);
             btnSair.Name = "btnSair";
-            btnSair.Size = new System.Drawing.Size(112, 29);
+            btnSair.Size = new System.Drawing.Size(110, 30);
             btnSair.TabIndex = 6;
             btnSair.Text = "Sair";
-            btnSair.UseVisualStyleBackColor = true;
+            btnSair.UseVisualStyleBackColor = false;
             btnSair.Click += btnSair_Click;
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new System.Drawing.Point(82, 70);
+            txtTelefone.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtTelefone.Location = new System.Drawing.Point(82, 104);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.PlaceholderText = "Digite um número";
             txtTelefone.Size = new System.Drawing.Size(169, 22);
@@ -75,8 +87,9 @@ namespace Purpose
             // 
             // lbDataDeNascimento
             // 
+            lbDataDeNascimento.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             lbDataDeNascimento.AutoSize = true;
-            lbDataDeNascimento.Location = new System.Drawing.Point(12, 122);
+            lbDataDeNascimento.Location = new System.Drawing.Point(12, 156);
             lbDataDeNascimento.Name = "lbDataDeNascimento";
             lbDataDeNascimento.Size = new System.Drawing.Size(133, 16);
             lbDataDeNascimento.TabIndex = 27;
@@ -84,8 +97,9 @@ namespace Purpose
             // 
             // lbTelefone
             // 
+            lbTelefone.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             lbTelefone.AutoSize = true;
-            lbTelefone.Location = new System.Drawing.Point(12, 73);
+            lbTelefone.Location = new System.Drawing.Point(12, 107);
             lbTelefone.Name = "lbTelefone";
             lbTelefone.Size = new System.Drawing.Size(64, 16);
             lbTelefone.TabIndex = 26;
@@ -93,15 +107,17 @@ namespace Purpose
             // 
             // dtpDataDeNascimento
             // 
+            dtpDataDeNascimento.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             dtpDataDeNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dtpDataDeNascimento.Location = new System.Drawing.Point(150, 117);
+            dtpDataDeNascimento.Location = new System.Drawing.Point(150, 151);
             dtpDataDeNascimento.Name = "dtpDataDeNascimento";
             dtpDataDeNascimento.Size = new System.Drawing.Size(101, 22);
             dtpDataDeNascimento.TabIndex = 3;
             // 
             // txtNome
             // 
-            txtNome.Location = new System.Drawing.Point(62, 27);
+            txtNome.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtNome.Location = new System.Drawing.Point(62, 61);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Digite um nome";
             txtNome.Size = new System.Drawing.Size(317, 22);
@@ -109,18 +125,24 @@ namespace Purpose
             // 
             // btnIncluir
             // 
-            btnIncluir.Location = new System.Drawing.Point(12, 175);
+            btnIncluir.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnIncluir.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnIncluir.Image = Properties.Resources.icons8_mais_2_matemática_32;
+            btnIncluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnIncluir.Location = new System.Drawing.Point(12, 209);
             btnIncluir.Name = "btnIncluir";
-            btnIncluir.Size = new System.Drawing.Size(112, 29);
+            btnIncluir.Size = new System.Drawing.Size(110, 30);
             btnIncluir.TabIndex = 7;
             btnIncluir.Text = "Incluir";
-            btnIncluir.UseVisualStyleBackColor = true;
+            btnIncluir.UseVisualStyleBackColor = false;
             btnIncluir.Click += btnIncluir_Click;
             // 
             // lbNome
             // 
+            lbNome.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             lbNome.AutoSize = true;
-            lbNome.Location = new System.Drawing.Point(12, 30);
+            lbNome.Location = new System.Drawing.Point(12, 64);
             lbNome.Name = "lbNome";
             lbNome.Size = new System.Drawing.Size(47, 16);
             lbNome.TabIndex = 22;
@@ -128,48 +150,65 @@ namespace Purpose
             // 
             // btnAlterar
             // 
-            btnAlterar.Location = new System.Drawing.Point(139, 175);
+            btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnAlterar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnAlterar.Image = Properties.Resources.icons8_editar_24;
+            btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnAlterar.Location = new System.Drawing.Point(139, 209);
             btnAlterar.Name = "btnAlterar";
-            btnAlterar.Size = new System.Drawing.Size(112, 29);
+            btnAlterar.Size = new System.Drawing.Size(110, 30);
             btnAlterar.TabIndex = 8;
             btnAlterar.Text = "Alterar";
-            btnAlterar.UseVisualStyleBackColor = true;
+            btnAlterar.UseVisualStyleBackColor = false;
             btnAlterar.Click += btnAlterar_Click;
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new System.Drawing.Point(267, 175);
+            btnExcluir.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnExcluir.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnExcluir.Image = Properties.Resources.icons8_cancelar_24;
+            btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnExcluir.Location = new System.Drawing.Point(267, 209);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new System.Drawing.Size(112, 29);
+            btnExcluir.Size = new System.Drawing.Size(110, 30);
             btnExcluir.TabIndex = 9;
             btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // btnFiltrar
             // 
-            btnFiltrar.Location = new System.Drawing.Point(410, 24);
+            btnFiltrar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnFiltrar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnFiltrar.Location = new System.Drawing.Point(410, 58);
             btnFiltrar.Name = "btnFiltrar";
-            btnFiltrar.Size = new System.Drawing.Size(112, 29);
+            btnFiltrar.Size = new System.Drawing.Size(110, 30);
             btnFiltrar.TabIndex = 4;
             btnFiltrar.Text = "Filtrar";
-            btnFiltrar.UseVisualStyleBackColor = true;
+            btnFiltrar.UseVisualStyleBackColor = false;
             btnFiltrar.Click += btnFiltrar_Click;
             // 
             // btnExibir
             // 
-            btnExibir.Location = new System.Drawing.Point(410, 70);
+            btnExibir.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnExibir.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnExibir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnExibir.Location = new System.Drawing.Point(410, 104);
             btnExibir.Name = "btnExibir";
-            btnExibir.Size = new System.Drawing.Size(112, 29);
+            btnExibir.Size = new System.Drawing.Size(110, 30);
             btnExibir.TabIndex = 5;
             btnExibir.Text = "Exibir";
-            btnExibir.UseVisualStyleBackColor = true;
+            btnExibir.UseVisualStyleBackColor = false;
             btnExibir.Click += btnExibir_Click;
             // 
             // lbFiltro
             // 
+            lbFiltro.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             lbFiltro.AutoSize = true;
-            lbFiltro.Location = new System.Drawing.Point(12, 225);
+            lbFiltro.Location = new System.Drawing.Point(12, 259);
             lbFiltro.Name = "lbFiltro";
             lbFiltro.Size = new System.Drawing.Size(39, 16);
             lbFiltro.TabIndex = 35;
@@ -189,9 +228,10 @@ namespace Purpose
             // 
             // tcClientes
             // 
+            tcClientes.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             tcClientes.Controls.Add(tpClientes);
             tcClientes.Controls.Add(tpReferencias);
-            tcClientes.Location = new System.Drawing.Point(12, 244);
+            tcClientes.Location = new System.Drawing.Point(12, 278);
             tcClientes.Name = "tcClientes";
             tcClientes.SelectedIndex = 0;
             tcClientes.Size = new System.Drawing.Size(510, 399);
@@ -232,13 +272,87 @@ namespace Purpose
             dgvReferenciaClientes.Size = new System.Drawing.Size(496, 364);
             dgvReferenciaClientes.TabIndex = 15;
             // 
+            // pnTitulo
+            // 
+            pnTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            pnTitulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            pnTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            pnTitulo.Controls.Add(btnMinimizar);
+            pnTitulo.Controls.Add(btnMaximizar);
+            pnTitulo.Controls.Add(btnFechar);
+            pnTitulo.Controls.Add(lbTitulo);
+            pnTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            pnTitulo.Location = new System.Drawing.Point(-3, -1);
+            pnTitulo.Name = "pnTitulo";
+            pnTitulo.Size = new System.Drawing.Size(540, 43);
+            pnTitulo.TabIndex = 38;
+            // 
+            // btnMinimizar
+            // 
+            btnMinimizar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnMinimizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            btnMinimizar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnMinimizar.ForeColor = System.Drawing.Color.Black;
+            btnMinimizar.Image = Properties.Resources.icons8_minimize_window_503;
+            btnMinimizar.Location = new System.Drawing.Point(456, 3);
+            btnMinimizar.Margin = new System.Windows.Forms.Padding(0);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new System.Drawing.Size(25, 30);
+            btnMinimizar.TabIndex = 3;
+            btnMinimizar.UseVisualStyleBackColor = false;
+            btnMinimizar.Click += btnMinimizar_Click;
+            // 
+            // btnMaximizar
+            // 
+            btnMaximizar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnMaximizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            btnMaximizar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnMaximizar.ForeColor = System.Drawing.Color.Black;
+            btnMaximizar.Image = Properties.Resources.icons8_maximizar_janela_502;
+            btnMaximizar.Location = new System.Drawing.Point(481, 3);
+            btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
+            btnMaximizar.Name = "btnMaximizar";
+            btnMaximizar.Size = new System.Drawing.Size(25, 30);
+            btnMaximizar.TabIndex = 2;
+            btnMaximizar.UseVisualStyleBackColor = false;
+            btnMaximizar.Click += btnMaximizar_Click;
+            // 
+            // btnFechar
+            // 
+            btnFechar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnFechar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            btnFechar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnFechar.ForeColor = System.Drawing.Color.Black;
+            btnFechar.Image = Properties.Resources.icons8_x_67__1_2;
+            btnFechar.Location = new System.Drawing.Point(504, 3);
+            btnFechar.Margin = new System.Windows.Forms.Padding(0);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new System.Drawing.Size(25, 30);
+            btnFechar.TabIndex = 1;
+            btnFechar.UseVisualStyleBackColor = false;
+            btnFechar.Click += btnFechar_Click;
+            // 
+            // lbTitulo
+            // 
+            lbTitulo.AutoSize = true;
+            lbTitulo.Location = new System.Drawing.Point(195, 9);
+            lbTitulo.Name = "lbTitulo";
+            lbTitulo.Size = new System.Drawing.Size(183, 24);
+            lbTitulo.TabIndex = 0;
+            lbTitulo.Text = "Cadastro de Clientes";
+            // 
             // CadastroDeClientes
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            AutoSize = true;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             BackColor = System.Drawing.SystemColors.ActiveBorder;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            ClientSize = new System.Drawing.Size(535, 655);
+            ClientSize = new System.Drawing.Size(533, 689);
+            Controls.Add(pnTitulo);
             Controls.Add(tcClientes);
             Controls.Add(lbFiltro);
             Controls.Add(btnExibir);
@@ -254,8 +368,10 @@ namespace Purpose
             Controls.Add(btnIncluir);
             Controls.Add(lbNome);
             Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "CadastroDeClientes";
             RightToLeft = System.Windows.Forms.RightToLeft.No;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Cadastro de Clientes";
             Load += CadastroDeClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
@@ -263,6 +379,8 @@ namespace Purpose
             tpClientes.ResumeLayout(false);
             tpReferencias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvReferenciaClientes).EndInit();
+            pnTitulo.ResumeLayout(false);
+            pnTitulo.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,11 +400,16 @@ namespace Purpose
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnExibir;
         private System.Windows.Forms.Label lbFiltro;
-        private System.Windows.Forms.TabControl tcClientes;
         private System.Windows.Forms.TabPage tpClientes;
         private System.Windows.Forms.TabPage tpReferencias;
         public System.Windows.Forms.DataGridView dgvClientes;
         public System.Windows.Forms.DataGridView dgvReferenciaClientes;
+        private System.Windows.Forms.Panel pnTitulo;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Label lbTitulo;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnMaximizar;
+        public System.Windows.Forms.TabControl tcClientes;
     }
 }
 

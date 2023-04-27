@@ -54,3 +54,4 @@ C:\Users\USUARIO\Documents\Projetos\C#\Purpose\Purpose\obj\Debug\netcoreapp3.1\P
 C:\Users\USUARIO\Documents\Projetos\C#\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.dll
 C:\Users\USUARIO\Documents\Projetos\C#\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.pdb
 C:\Users\USUARIO\Documents\Projetos\C#\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.genruntimeconfig.cache
+C:\Users\USUARIO\Documents\Projetos\C#\Purpose\Purpose\obj\Debug\netcoreapp3.1\Purpose.Properties.Resources.resources
