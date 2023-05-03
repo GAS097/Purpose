@@ -120,15 +120,9 @@ namespace Purpose
 
                 while (dr.Read())
                 {
-                    /*txtNome.Text = (string)dr["CLIENTE_NOME"];
+                    txtNome.Text = (string)dr["CLIENTE_NOME"];
                     txtTelefone.Text = Convert.ToString(dr["CLIENTE_TELEFONE"]);
-                    dtpDataDeNascimento.Text = Convert.ToString(dr["CLIENTE_DATA_DE_NASCIMENTO"]);*/
-                    DataSet dataSet = new DataSet();
-                    da = new SqlDataAdapter(scriptSQL, stringSQL);
-
-                    da.Fill(dataSet);
-
-                    dgvClientes.DataSource = dataSet.Tables[0];
+                    dtpDataDeNascimento.Text = Convert.ToString(dr["CLIENTE_DATA_DE_NASCIMENTO"]);
                 }
             }
             catch (Exception ex)

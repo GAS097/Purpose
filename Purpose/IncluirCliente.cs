@@ -7,6 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net.Http;
+using System.Threading.Tasks;
+//using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Purpose
 {
@@ -40,9 +44,45 @@ namespace Purpose
         {
             txtTelefone.BackColor = Color.White;
         }
+        private void txtCPF_Click(object sender, EventArgs e)
+        {
+            txtCPF.BackColor = Color.White;
+        }
 
-        //*Operações da tela de inclusão de clientes
+        //Operações da tela de inclusão de clientes
 
+        //Consulta de CPF pelo site ViaCep
+        /*
+        private void btnConsultaCPF_Click(object sender, EventArgs e)
+        {
+            static async Task ConsultarCPF()
+            {
+                string cpf = "12345678900"; // substitua pelo CPF que você deseja consultar
+
+                using (var client = new HttpClient())
+                {
+                    var response = await client.GetAsync($"https://viacep.com.br/ws/{cpf}/json/");
+                    var content = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ViaCEPResponse>(content);
+
+                    if (!string.IsNullOrEmpty(result.erro))
+                    {
+                        MessageBox.Show("CPF não encontrado.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Nome: {result.nome}");
+                    }
+                }
+            }
+        }
+        private class ViaCEPResponse
+        {
+            public string erro { get; set; }
+            public string nome { get; set; }
+        }*/
+
+        //Função de salvar um novo cliente no banco de dados
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string validacao = string.Empty;
@@ -51,6 +91,11 @@ namespace Purpose
             {
                 MessageBox.Show(validacao = string.Format("O campo NOME está vazio, digite um nome.{0}", Environment.NewLine));
                 txtNome.BackColor = Color.Red;
+            }
+            if (String.IsNullOrWhiteSpace(txtCPF.Text))
+            {
+                MessageBox.Show(validacao = string.Format("O campo CPF está vazio, digite um CPF.{0}", Environment.NewLine));
+                txtCPF.BackColor = Color.Red;
             }
             if (String.IsNullOrWhiteSpace(txtTelefone.Text))
             {
@@ -94,7 +139,7 @@ namespace Purpose
 
                     this.Close();
                 }
-            }            
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

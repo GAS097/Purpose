@@ -29,111 +29,148 @@ namespace Purpose
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.lbDataDeNascimento = new System.Windows.Forms.Label();
-            this.lbTelefone = new System.Windows.Forms.Label();
-            this.dtpDataDeNascimento = new System.Windows.Forms.DateTimePicker();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            btnCancelar = new System.Windows.Forms.Button();
+            txtTelefone = new System.Windows.Forms.TextBox();
+            lbDataDeNascimento = new System.Windows.Forms.Label();
+            lbTelefone = new System.Windows.Forms.Label();
+            dtpDataDeNascimento = new System.Windows.Forms.DateTimePicker();
+            txtNome = new System.Windows.Forms.TextBox();
+            btnSalvar = new System.Windows.Forms.Button();
+            lbNome = new System.Windows.Forms.Label();
+            lbCPF = new System.Windows.Forms.Label();
+            txtCPF = new System.Windows.Forms.TextBox();
+            btnConsultaCPF = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(359, 190);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 27);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.Location = new System.Drawing.Point(359, 190);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new System.Drawing.Size(98, 27);
+            btnCancelar.TabIndex = 5;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(82, 66);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.PlaceholderText = "Digite um número";
-            this.txtTelefone.Size = new System.Drawing.Size(148, 22);
-            this.txtTelefone.TabIndex = 2;
-            this.txtTelefone.Click += new System.EventHandler(this.txtTelefone_Click);
-            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
+            txtTelefone.Location = new System.Drawing.Point(82, 96);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.PlaceholderText = "Digite um número";
+            txtTelefone.Size = new System.Drawing.Size(148, 22);
+            txtTelefone.TabIndex = 2;
+            txtTelefone.Click += txtTelefone_Click;
+            txtTelefone.KeyPress += txtTelefone_KeyPress;
             // 
             // lbDataDeNascimento
             // 
-            this.lbDataDeNascimento.AutoSize = true;
-            this.lbDataDeNascimento.Location = new System.Drawing.Point(12, 112);
-            this.lbDataDeNascimento.Name = "lbDataDeNascimento";
-            this.lbDataDeNascimento.Size = new System.Drawing.Size(133, 16);
-            this.lbDataDeNascimento.TabIndex = 19;
-            this.lbDataDeNascimento.Text = "Data de Nascimento:";
+            lbDataDeNascimento.AutoSize = true;
+            lbDataDeNascimento.Location = new System.Drawing.Point(12, 142);
+            lbDataDeNascimento.Name = "lbDataDeNascimento";
+            lbDataDeNascimento.Size = new System.Drawing.Size(133, 16);
+            lbDataDeNascimento.TabIndex = 19;
+            lbDataDeNascimento.Text = "Data de Nascimento:";
             // 
             // lbTelefone
             // 
-            this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(12, 69);
-            this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(64, 16);
-            this.lbTelefone.TabIndex = 18;
-            this.lbTelefone.Text = "Telefone:";
+            lbTelefone.AutoSize = true;
+            lbTelefone.Location = new System.Drawing.Point(12, 99);
+            lbTelefone.Name = "lbTelefone";
+            lbTelefone.Size = new System.Drawing.Size(64, 16);
+            lbTelefone.TabIndex = 18;
+            lbTelefone.Text = "Telefone:";
             // 
             // dtpDataDeNascimento
             // 
-            this.dtpDataDeNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataDeNascimento.Location = new System.Drawing.Point(151, 107);
-            this.dtpDataDeNascimento.Name = "dtpDataDeNascimento";
-            this.dtpDataDeNascimento.Size = new System.Drawing.Size(103, 22);
-            this.dtpDataDeNascimento.TabIndex = 3;
+            dtpDataDeNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            dtpDataDeNascimento.Location = new System.Drawing.Point(151, 137);
+            dtpDataDeNascimento.Name = "dtpDataDeNascimento";
+            dtpDataDeNascimento.Size = new System.Drawing.Size(103, 22);
+            dtpDataDeNascimento.TabIndex = 3;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(65, 23);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.PlaceholderText = "Digite um nome";
-            this.txtNome.Size = new System.Drawing.Size(371, 22);
-            this.txtNome.TabIndex = 1;
-            this.txtNome.Click += new System.EventHandler(this.txtNome_Click);
+            txtNome.Location = new System.Drawing.Point(65, 23);
+            txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Digite um nome";
+            txtNome.Size = new System.Drawing.Size(371, 22);
+            txtNome.TabIndex = 1;
+            txtNome.Click += txtNome_Click;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(255, 190);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(98, 27);
-            this.btnSalvar.TabIndex = 4;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            btnSalvar.Location = new System.Drawing.Point(255, 190);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new System.Drawing.Size(98, 27);
+            btnSalvar.TabIndex = 4;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // lbNome
             // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(12, 26);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(47, 16);
-            this.lbNome.TabIndex = 14;
-            this.lbNome.Text = "Nome:";
+            lbNome.AutoSize = true;
+            lbNome.Location = new System.Drawing.Point(12, 26);
+            lbNome.Name = "lbNome";
+            lbNome.Size = new System.Drawing.Size(47, 16);
+            lbNome.TabIndex = 14;
+            lbNome.Text = "Nome:";
+            // 
+            // lbCPF
+            // 
+            lbCPF.AutoSize = true;
+            lbCPF.Location = new System.Drawing.Point(12, 64);
+            lbCPF.Name = "lbCPF";
+            lbCPF.Size = new System.Drawing.Size(36, 16);
+            lbCPF.TabIndex = 20;
+            lbCPF.Text = "CPF:";
+            // 
+            // txtCPF
+            // 
+            txtCPF.Location = new System.Drawing.Point(65, 61);
+            txtCPF.Name = "txtCPF";
+            txtCPF.PlaceholderText = "Digite um CPF";
+            txtCPF.Size = new System.Drawing.Size(148, 22);
+            txtCPF.TabIndex = 21;
+            txtCPF.Click += txtCPF_Click;
+            // 
+            // btnConsultaCPF
+            // 
+            btnConsultaCPF.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnConsultaCPF.BackColor = System.Drawing.SystemColors.ButtonFace;
+            btnConsultaCPF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnConsultaCPF.Image = Properties.Resources.icons8_search_20;
+            btnConsultaCPF.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnConsultaCPF.Location = new System.Drawing.Point(219, 60);
+            btnConsultaCPF.Name = "btnConsultaCPF";
+            btnConsultaCPF.Size = new System.Drawing.Size(26, 23);
+            btnConsultaCPF.TabIndex = 22;
+            btnConsultaCPF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnConsultaCPF.UseVisualStyleBackColor = false;
             // 
             // IncluirCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 229);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtTelefone);
-            this.Controls.Add(this.lbDataDeNascimento);
-            this.Controls.Add(this.lbTelefone);
-            this.Controls.Add(this.dtpDataDeNascimento);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.lbNome);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "IncluirCliente";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Incluir Cliente";
-            this.Load += new System.EventHandler(this.IncluirCliente_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(469, 229);
+            Controls.Add(btnConsultaCPF);
+            Controls.Add(txtCPF);
+            Controls.Add(lbCPF);
+            Controls.Add(btnCancelar);
+            Controls.Add(txtTelefone);
+            Controls.Add(lbDataDeNascimento);
+            Controls.Add(lbTelefone);
+            Controls.Add(dtpDataDeNascimento);
+            Controls.Add(txtNome);
+            Controls.Add(btnSalvar);
+            Controls.Add(lbNome);
+            Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Name = "IncluirCliente";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Incluir Cliente";
+            Load += IncluirCliente_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -146,5 +183,8 @@ namespace Purpose
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lbNome;
+        private System.Windows.Forms.Label lbCPF;
+        private System.Windows.Forms.TextBox txtCPF;
+        private System.Windows.Forms.Button btnConsultaCPF;
     }
 }
