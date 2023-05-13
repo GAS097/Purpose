@@ -51,28 +51,25 @@ namespace Purpose
 
         //Operações da tela de inclusão de clientes
 
-        //Consulta de CPF pelo site ViaCep
-        /*
-        private void btnConsultaCPF_Click(object sender, EventArgs e)
+        //Consulta de CPF
+
+        static void ConsultarCPF()
         {
-            static async Task ConsultarCPF()
+            string cpf = IncluirCliente.txtCPF.ToString(); // substitua pelo CPF que você deseja consultar
+
+            using (var client = new HttpClient())
             {
-                string cpf = "12345678900"; // substitua pelo CPF que você deseja consultar
+                var response = await client.GetAsync($"https://viacep.com.br/ws/{cpf}/json/");
+                var content = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<ViaCEPResponse>(content);
 
-                using (var client = new HttpClient())
+                if (!string.IsNullOrEmpty(result.erro))
                 {
-                    var response = await client.GetAsync($"https://viacep.com.br/ws/{cpf}/json/");
-                    var content = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<ViaCEPResponse>(content);
-
-                    if (!string.IsNullOrEmpty(result.erro))
-                    {
-                        MessageBox.Show("CPF não encontrado.");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Nome: {result.nome}");
-                    }
+                    MessageBox.Show("CPF não encontrado.");
+                }
+                else
+                {
+                    Console.WriteLine($"Nome: {result.nome}");
                 }
             }
         }
@@ -80,7 +77,12 @@ namespace Purpose
         {
             public string erro { get; set; }
             public string nome { get; set; }
-        }*/
+        }
+
+        private void btnConsultaCPF_Click(object sender, EventArgs e)
+        {
+            ConsultarCPF();
+        }
 
         //Função de salvar um novo cliente no banco de dados
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -145,6 +147,6 @@ namespace Purpose
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
     }
 }

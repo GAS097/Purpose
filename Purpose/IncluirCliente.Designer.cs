@@ -180,11 +180,11 @@ namespace Purpose
         private System.Windows.Forms.Label lbDataDeNascimento;
         private System.Windows.Forms.Label lbTelefone;
         private System.Windows.Forms.DateTimePicker dtpDataDeNascimento;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Label lbCPF;
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Button btnConsultaCPF;
+        public System.Windows.Forms.TextBox txtNome;
+        public System.Windows.Forms.TextBox txtCPF;
     }
 }
